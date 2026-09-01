@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Begin your journey with Aisle &amp; Beyond. Tell us where you are in your bridal season and what kind of support would make it feel lighter."
+    />
+    <title>Contact — Aisle &amp; Beyond</title>
+    <link rel="icon" href="assets/img/logo.png" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <!-- ================= Announcement ================= -->
+    <div class="announcement">
+      <p class="announcement__text">
+        <span class="announcement__mark" aria-hidden="true">&#10022;</span>
+        Thoughtful care for your journey to the aisle and beyond.
+        <span class="announcement__mark" aria-hidden="true">&#10022;</span>
+      </p>
+    </div>
+
+    <!-- ================= Header ================= -->
+    <header class="header" id="header">
+      <div class="header__inner container">
+        <nav class="nav" aria-label="Primary">
+          <ul class="nav__list nav__list--start">
+            <li class="nav__item"><a class="nav__link" href="index.html">Home</a></li>
+            <li class="nav__item"><a class="nav__link" href="experiences.html">Experiences</a></li>
+            <li class="nav__item"><a class="nav__link" href="beyond.html">The Aisle &amp; Beyond Way</a></li>
+          </ul>
+
+          <a class="nav__brand" href="index.html">
+            <img
+              class="nav__logo"
+              src="assets/img/logo.png"
+              alt="Aisle &amp; Beyond, wedding concierge"
+              width="180"
+              height="72"
+            />
+          </a>
+
+          <ul class="nav__list nav__list--end">
+            <li class="nav__item"><a class="nav__link" href="about.html">About</a></li>
+            <li class="nav__item"><a class="nav__link" href="index.html#how-it-works">How It Works</a></li>
+            <li class="nav__item">
+              <a class="nav__link" href="contact.html" aria-current="page">Contact</a>
+            </li>
+            <li class="nav__item">
+              <a class="btn btn--primary btn--sm" href="contact.html">Inquire Now</a>
+            </li>
+          </ul>
+
+          <button
+            class="nav__toggle"
+            id="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="nav-panel"
+            aria-label="Open navigation menu"
+          >
+            <span class="nav__toggle-bar" aria-hidden="true"></span>
+            <span class="nav__toggle-bar" aria-hidden="true"></span>
+            <span class="nav__toggle-bar" aria-hidden="true"></span>
+          </button>
+        </nav>
+      </div>
+
+      <!-- Collapsible menu (tablet + mobile) -->
+      <div class="nav__panel" id="nav-panel">
+        <ul class="nav__panel-list">
+          <li><a class="nav__panel-link" href="index.html">Home</a></li>
+          <li><a class="nav__panel-link" href="experiences.html">Experiences</a></li>
+          <li><a class="nav__panel-link" href="beyond.html">The Aisle &amp; Beyond Way</a></li>
+          <li><a class="nav__panel-link" href="about.html">About</a></li>
+          <li><a class="nav__panel-link" href="index.html#how-it-works">How It Works</a></li>
+          <li><a class="nav__panel-link" href="contact.html">Contact</a></li>
+          <li><a class="btn btn--primary btn--block" href="contact.html">Inquire Now</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <!-- ================= Page hero ================= -->
+      <section class="page-hero" aria-labelledby="page-hero-title">
+        <div class="page-hero__media">
+          <img
+            class="page-hero__image"
+            src="assets/img/image3.jpg"
+            alt="Blush and ivory rose bridal bouquet tied with a satin ribbon"
+            width="1600"
+            height="900"
+          />
+        </div>
+        <div class="page-hero__overlay" aria-hidden="true"></div>
+
+        <div class="container">
+          <div class="page-hero__content" data-reveal>
+            <p class="eyebrow eyebrow--light">Begin Your Journey</p>
+            <h1 class="page-hero__title" id="page-hero-title">
+              Let&rsquo;s make your bridal season feel lighter.
+            </h1>
+            <p class="page-hero__text">
+              Tell us a little about where you are in your journey and what kind of support
+              would make the biggest difference.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= Contact ================= -->
+      <section class="contact" aria-labelledby="contact-title">
+        <div class="contact__inner container">
+          <div class="contact__content" data-reveal>
+            <p class="eyebrow">We&rsquo;d Love to Hear From You</p>
+            <h2 class="contact__title" id="contact-title">
+              Thoughtful care starts with a conversation.
+            </h2>
+            <p class="contact__text">
+              Whether you know exactly what you need or you&rsquo;re not quite sure yet,
+              we&rsquo;re here to help you find the right experience.
+            </p>
+            <p class="contact__text">
+              We look forward to learning about your bridal journey.
+            </p>
+          </div>
+
+          <div class="form-card" data-reveal>
+            <h3 class="form-card__title" id="form-title">Send us a message</h3>
+
+            <form class="form" id="inquiry-form" novalidate aria-labelledby="form-title">
+              <div class="form__field">
+                <label class="form__label" for="name">
+                  Name <span class="form__required" aria-hidden="true">*</span>
+                </label>
+                <input
+                  class="form__input"
+                  type="text"
+                  id="name"
+                  name="name"
+                  autocomplete="name"
+                  required
+                  aria-describedby="name-error"
+                />
+                <span class="form__error" id="name-error" hidden></span>
+              </div>
+
+              <div class="form__field">
+                <label class="form__label" for="email">
+                  Email <span class="form__required" aria-hidden="true">*</span>
+                </label>
+                <input
+                  class="form__input"
+                  type="email"
+                  id="email"
+                  name="email"
+                  autocomplete="email"
+                  required
+                  aria-describedby="email-error"
+                />
+                <span class="form__error" id="email-error" hidden></span>
+              </div>
+
+              <div class="form__field">
+                <label class="form__label" for="phone">Phone Number</label>
+                <div class="form__group">
+                  <select class="form__select" id="phone-code" name="phone_code" aria-label="Country code">
+                    <option value="CA" selected>CA</option>
+                    <option value="US">US</option>
+                  </select>
+                  <input
+                    class="form__input"
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    autocomplete="tel"
+                  />
+                </div>
+              </div>
+
+              <div class="form__field">
+                <label class="form__label" for="wedding-date">Wedding Date</label>
+                <input class="form__input" type="date" id="wedding-date" name="wedding_date" />
+              </div>
+
+              <div class="form__field">
+                <label class="form__label" for="wedding-location">Wedding Location</label>
+                <select class="form__select" id="wedding-location" name="wedding_location">
+                  <option value="" selected>Select Location</option>
+                  <option value="Alberta">Alberta</option>
+                  <option value="British Columbia">British Columbia</option>
+                  <option value="Manitoba">Manitoba</option>
+                  <option value="New Brunswick">New Brunswick</option>
+                  <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+                  <option value="Northwest Territories">Northwest Territories</option>
+                  <option value="Nova Scotia">Nova Scotia</option>
+                  <option value="Nunavut">Nunavut</option>
+                  <option value="Ontario">Ontario</option>
+                  <option value="Prince Edward Island">Prince Edward Island</option>
+                  <option value="Quebec">Quebec</option>
+                  <option value="Saskatchewan">Saskatchewan</option>
+                  <option value="Yukon">Yukon</option>
+                </select>
+              </div>
+
+              <div class="form__field">
+                <label class="form__label" for="service">Required Service</label>
+                <select class="form__select" id="service" name="service">
+                  <option value="" selected>Select an option</option>
+                  <option value="Dress Shopping Concierge">Dress Shopping Concierge</option>
+                  <option value="Wedding Day Dress Concierge">Wedding Day Dress Concierge</option>
+                  <option value="After Wedding Care">After Wedding Care</option>
+                  <option value="Not sure yet">Not sure yet</option>
+                </select>
+              </div>
+
+              <div class="form__field">
+                <label class="form__label" for="details">More Details</label>
+                <textarea
+                  class="form__textarea"
+                  id="details"
+                  name="details"
+                  placeholder="Tell us what support you are looking for and any other information you will like to share"
+                ></textarea>
+              </div>
+
+              <div class="form__actions">
+                <button class="btn btn--primary" type="submit">Submit Form</button>
+              </div>
+            </form>
+
+            <div class="form__success" id="form-success" hidden>
+              <p class="form__success-title">Thank you for reaching out.</p>
+              <p class="form__success-text">
+                We have received your note and will be in touch shortly to begin the
+                conversation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= Prefer email ================= -->
+      <section class="direct" aria-labelledby="direct-title">
+        <div class="container direct__inner" data-reveal>
+          <p class="eyebrow">Prefer Email?</p>
+          <h2 id="direct-title">
+            <a class="direct__address" href="mailto:hello@aisleandbeyond.co">
+              hello@aisleandbeyond.co
+            </a>
+          </h2>
+          <p class="direct__text">
+            Send us a note directly and we&rsquo;ll begin the conversation from there.
+          </p>
+          <a class="btn btn--primary" href="mailto:hello@aisleandbeyond.co">
+            Email Aisle &amp; Beyond
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= Footer ================= -->
+    <footer class="footer" id="contact">
+      <div class="container">
+        <div class="footer__top">
+          <div class="footer__brand">
+            <img
+              class="footer__logo"
+              src="assets/img/logo-footer.png"
+              alt="Aisle &amp; Beyond, wedding concierge"
+              width="180"
+              height="46"
+              loading="lazy"
+            />
+            <p class="footer__tagline">Follow us for inspiration</p>
+            <ul class="footer__socials">
+              <li>
+                <a class="footer__social" href="#" aria-label="Aisle and Beyond on Instagram">
+                  <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+                    <path
+                      fill="currentColor"
+                      d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.05 1.8.25 2.2.42.6.22 1 .48 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c0 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2 0-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c0-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.42C8.4 2.2 8.8 2.2 12 2.2Zm0 1.8c-3.1 0-3.5 0-4.8.07-1 .05-1.6.22-1.9.35-.5.2-.8.4-1.1.7-.3.3-.6.6-.7 1.1-.1.3-.3.9-.4 1.9C3 9.4 3 9.8 3 12.9v.2c0 3.1 0 3.5.07 4.8.05 1 .22 1.6.35 1.9.2.5.4.8.7 1.1.3.3.6.6 1.1.7.3.1.9.3 1.9.4 1.3.06 1.7.06 4.8.06s3.5 0 4.8-.06c1-.05 1.6-.22 1.9-.35.5-.2.8-.4 1.1-.7.3-.3.6-.6.7-1.1.1-.3.3-.9.4-1.9.06-1.3.06-1.7.06-4.8s0-3.5-.06-4.8c-.05-1-.22-1.6-.35-1.9-.2-.5-.4-.8-.7-1.1-.3-.3-.6-.6-1.1-.7-.3-.1-.9-.3-1.9-.4C15.5 4 15.1 4 12 4Zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8Zm0 1.8a3.1 3.1 0 1 0 0 6.2 3.1 3.1 0 0 0 0-6.2Zm5.1-3.3a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3Z"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a class="footer__social" href="#" aria-label="Aisle and Beyond on TikTok">
+                  <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+                    <path
+                      fill="currentColor"
+                      d="M16.5 3h-2.6v12.2a2.5 2.5 0 1 1-2.5-2.5c.2 0 .5 0 .7.1v-2.6a5.1 5.1 0 1 0 4.4 5V9a6.4 6.4 0 0 0 3.5 1V7.4a3.9 3.9 0 0 1-3.5-4.4Z"
+                    />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <nav class="footer__nav" aria-label="Footer">
+            <ul class="footer__links">
+              <li><a class="footer__link" href="index.html">Home</a></li>
+              <li><a class="footer__link" href="about.html">About Us</a></li>
+              <li><a class="footer__link" href="index.html#how-it-works">How it Works</a></li>
+            </ul>
+            <ul class="footer__links">
+              <li><a class="footer__link" href="experiences.html">Experiences</a></li>
+              <li><a class="footer__link" href="beyond.html">The Aisle &amp; Beyond Way</a></li>
+              <li><a class="footer__link" href="contact.html">Contact Us</a></li>
+            </ul>
+          </nav>
+
+          <address class="footer__contact">
+            <p><a class="footer__link" href="tel:+14169393833">Canada: +1 416 939 3833</a></p>
+            <p><a class="footer__link" href="mailto:hello@aisleandbeyond.co">hello@aisleandbeyond.co</a></p>
+          </address>
+        </div>
+
+        <div class="footer__bottom">
+          <p class="footer__copyright">&copy; 2026 Aisle &amp; Beyond. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
