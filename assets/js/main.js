@@ -70,7 +70,7 @@
     var dots = heroSlider.querySelectorAll(".hero__dot");
     var activeIndex = 0;
     var timerId = null;
-    var SLIDE_INTERVAL = 7000;
+    var SLIDE_INTERVAL = 3000;
 
     function showSlide(index) {
       if (!slides.length) return;

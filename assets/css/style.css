@@ -14,7 +14,7 @@
   /* ---- Colour ---- */
   --color-navy: #0b2345;
   --color-navy-bold: #0b2345;
-  --color-navy-deep: #0e2a4f;
+  --color-navy-deep: #061a35;
   --color-navy-soft: #1c4171;
   --color-blush: #eda893;
   --color-gold-blush: #c9a15b;
@@ -718,18 +718,11 @@ body.nav-open {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(18, 49, 92, 0.12) 0%,
-      rgba(18, 49, 92, 0.22) 45%,
-      rgba(18, 49, 92, 0.3) 100%
-    ),
-    linear-gradient(
-      to top,
-      rgba(237, 168, 147, 0.28) 0%,
-      rgba(237, 168, 147, 0) 42%
-    );
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.3) 85.45%,
+    rgba(231, 169, 155, 0.65) 97.75%
+  );
   pointer-events: none;
 }
 
@@ -1341,15 +1334,15 @@ body.nav-open {
 
 .testimonial {
   position: relative;
-  min-height: clamp(22rem, 42vw, 32rem);
+  min-height: clamp(24rem, 36vw, 40rem);
   overflow: hidden;
   text-align: center;
-  isolation: isolate;
+  background-color: var(--color-navy);
 }
 
 .testimonial-slider__viewport {
-  position: relative;
-  min-height: inherit;
+  position: absolute;
+  inset: 0;
 }
 
 .testimonial-slide {
@@ -1360,13 +1353,13 @@ body.nav-open {
   justify-content: center;
   opacity: 0;
   visibility: hidden;
+  isolation: isolate;
   transition:
     opacity 0.85s cubic-bezier(0.22, 0.61, 0.36, 1),
     visibility 0.85s;
 }
 
 .testimonial-slide.is-active {
-  position: relative;
   opacity: 1;
   visibility: visible;
   z-index: 1;
@@ -1375,28 +1368,28 @@ body.nav-open {
 .testimonial-slide__image {
   position: absolute;
   inset: 0;
-  z-index: -2;
+  z-index: 0;
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 35%;
+  object-position: center center;
 }
 
 .testimonial-slide__overlay {
   position: absolute;
   inset: 0;
-  z-index: -1;
-  background: linear-gradient(
-    180deg,
-    rgba(15, 32, 59, 0.55) 0%,
-    rgba(15, 32, 59, 0.72) 50%,
-    rgba(15, 32, 59, 0.66) 100%
-  );
+  z-index: 1;
+  background-color: rgba(11, 35, 69, 0.58);
+  pointer-events: none;
 }
 
 .testimonial-slide__inner {
-  width: min(100%, 52rem);
-  padding: clamp(3.5rem, 8vw, 6rem) clamp(4.5rem, 10vw, 6rem);
+  position: relative;
+  z-index: 2;
+  width: min(100%, 78rem);
+  margin-inline: auto;
+  padding: clamp(2.5rem, 5vw, 3.5rem) clamp(4.25rem, 11vw, 6.5rem);
 }
 
 .testimonial__mark {
@@ -1409,42 +1402,34 @@ body.nav-open {
 }
 
 .testimonial__quote {
-  margin: clamp(1rem, 2.5vw, 1.5rem) 0 0;
+  margin: clamp(0.75rem, 2vw, 1.25rem) 0 0;
 }
 
 .testimonial__text {
   margin: 0;
   font-family: var(--font-heading);
-  font-size: clamp(1.125rem, 2.2vw, 1.625rem);
+  /* font-size: clamp(1.375rem, 2.35vw, 2.375rem); */
+  font-size: clamp(1.375rem, 2.35vw, 4rem);
   font-weight: 400;
-  line-height: 1.45;
-  letter-spacing: 0.04em;
+  line-height: 1.38;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
+  text-wrap: balance;
   color: var(--color-white);
-}
-
-.testimonial__line {
-  display: block;
-}
-
-@media (min-width: 768px) {
-  .testimonial__line {
-    white-space: nowrap;
-  }
 }
 
 .testimonial-slide__more {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  margin-top: clamp(1.25rem, 3vw, 2rem);
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
   padding: 0;
   border: 0;
   background: transparent;
-  font-family: var(--font-body);
-  font-size: var(--fs-sm);
+  font-family: var(--font-heading);
+  font-size: clamp(0.9375rem, 1.4vw, 1.125rem);
   font-weight: 400;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   color: var(--color-white);
   cursor: pointer;
   transition: opacity var(--transition-fast);
@@ -1462,7 +1447,7 @@ body.nav-open {
 .testimonial-slider__control {
   position: absolute;
   top: 50%;
-  z-index: 2;
+  z-index: 3;
   display: grid;
   place-items: center;
   width: 3rem;
@@ -1481,11 +1466,11 @@ body.nav-open {
 }
 
 .testimonial-slider__control--prev {
-  left: clamp(0.75rem, 2vw, 1.5rem);
+  left: clamp(1rem, 3vw, 2.5rem);
 }
 
 .testimonial-slider__control--next {
-  right: clamp(0.75rem, 2vw, 1.5rem);
+  right: clamp(1rem, 3vw, 2.5rem);
 }
 
 .testimonial-slider__control:hover {
@@ -1685,6 +1670,7 @@ body.testimonial-modal-open {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
   transition: transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
@@ -2226,7 +2212,8 @@ body.lightbox-open {
 }
 
 .page-experiences .mobile-bar,
-.page-about .mobile-bar {
+.page-about .mobile-bar,
+.page-beyond .mobile-bar {
   position: fixed;
   left: 0;
   right: 0;
@@ -2238,12 +2225,14 @@ body.lightbox-open {
 }
 
 .page-experiences .mobile-bar__brand,
-.page-about .mobile-bar__brand {
+.page-about .mobile-bar__brand,
+.page-beyond .mobile-bar__brand {
   display: none;
 }
 
 .page-experiences .mobile-bar__toggle,
-.page-about .mobile-bar__toggle {
+.page-about .mobile-bar__toggle,
+.page-beyond .mobile-bar__toggle {
   pointer-events: auto;
   background: none;
   border: 0;
@@ -2251,7 +2240,8 @@ body.lightbox-open {
 }
 
 .page-experiences .mobile-bar__toggle-bar,
-.page-about .mobile-bar__toggle-bar {
+.page-about .mobile-bar__toggle-bar,
+.page-beyond .mobile-bar__toggle-bar {
   background-color: rgba(255, 255, 255, 0.92);
 }
 
@@ -2361,6 +2351,16 @@ body.lightbox-open {
   padding-block: var(--section-padding);
 }
 
+.method--head {
+  padding-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.method-steps {
+  background-color: var(--color-white);
+  padding-top: clamp(1.25rem, 2.5vw, 2rem);
+  padding-bottom: clamp(2.5rem, 5vw, 4.5rem);
+}
+
 .method__grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -2402,17 +2402,19 @@ body.lightbox-open {
   line-height: 1.7;
 }
 
-.method--carousel .method-carousel {
+.method-steps .method-carousel {
   position: relative;
-  margin-top: clamp(2.5rem, 5vw, 4rem);
+  margin-top: 0;
+  background-color: var(--color-white);
 }
 
-.method--carousel .method-carousel__viewport {
+.method-steps .method-carousel__viewport {
   overflow: hidden;
   padding-inline: clamp(3rem, 8vw, 4.5rem);
+  background-color: var(--color-white);
 }
 
-.method--carousel .method-carousel__track {
+.method-steps .method-carousel__track {
   display: flex;
   gap: clamp(2rem, 5vw, 4.5rem);
   margin: 0;
@@ -2423,25 +2425,28 @@ body.lightbox-open {
   scroll-behavior: smooth;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  background-color: var(--color-white);
 }
 
-.method--carousel .method-carousel__track::-webkit-scrollbar {
+.method-steps .method-carousel__track::-webkit-scrollbar {
   display: none;
 }
 
-.method--carousel .method-carousel__slide {
+.method-steps .method-carousel__slide {
   flex: 0 0 clamp(11.5rem, 24vw, 16.5rem);
   scroll-snap-align: start;
   min-height: 0;
   padding: 0;
-  background: transparent;
+  background-color: transparent;
+  border: 0;
+  box-shadow: none;
 }
 
-.method--carousel .method-carousel__slide:hover {
-  background: transparent;
+.method-steps .method-carousel__slide:hover {
+  background-color: transparent;
 }
 
-.method--carousel .step__number {
+.method-steps .step__number {
   font-family: var(--font-heading);
   font-size: var(--fs-sm);
   font-weight: 400;
@@ -2449,14 +2454,14 @@ body.lightbox-open {
   color: var(--color-gold-blush);
 }
 
-.method--carousel .step__title {
+.method-steps .step__title {
   margin-top: var(--space-md);
   font-size: clamp(1.5rem, 2.4vw, 2rem);
   line-height: 1.2;
   color: var(--color-navy);
 }
 
-.method--carousel .step__text {
+.method-steps .step__text {
   margin-top: var(--space-md);
   max-width: 22ch;
   font-size: var(--fs-sm);
@@ -2486,11 +2491,11 @@ body.lightbox-open {
 }
 
 .method-carousel__control--prev {
-  left: 0;
+  left: clamp(0.25rem, 1vw, 0.5rem);
 }
 
 .method-carousel__control--next {
-  right: 0;
+  right: clamp(0.25rem, 1vw, 0.5rem);
 }
 
 .method-carousel__control:hover:not(:disabled) {
@@ -2693,8 +2698,12 @@ body.lightbox-open {
 .contact-hero__inner {
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-  align-items: start;
+  align-items: center;
   gap: clamp(2rem, 5vw, 4rem);
+}
+
+.contact-hero__content {
+  align-self: center;
 }
 
 .contact-hero__title {
