@@ -121,6 +121,166 @@
   }
 
   /* -----------------------------------------------------------------------
+     Testimonial slider & modal (Home)
+     -------------------------------------------------------------------- */
+
+  var testimonialSlider = document.querySelector("[data-testimonial-slider]");
+  var testimonialModal = document.getElementById("testimonial-modal");
+  var testimonialModalTitle = document.getElementById("testimonial-modal-title");
+  var testimonialModalBody = document.getElementById("testimonial-modal-body");
+  var testimonialModalAuthor = document.getElementById("testimonial-modal-author");
+  var testimonialModalImage = document.getElementById("testimonial-modal-image");
+  var testimonialLastFocus = null;
+  var TESTIMONIAL_INTERVAL = 7000;
+  var pauseTestimonialAutoplay = function () {};
+  var resumeTestimonialAutoplay = function () {};
+
+  if (testimonialSlider) {
+    var testimonialSlides = testimonialSlider.querySelectorAll("[data-testimonial-slide]");
+    var testimonialPrev = testimonialSlider.querySelector("[data-testimonial-prev]");
+    var testimonialNext = testimonialSlider.querySelector("[data-testimonial-next]");
+    var testimonialActiveIndex = 0;
+    var testimonialTimerId = null;
+
+    function showTestimonial(index) {
+      if (!testimonialSlides.length) return;
+
+      testimonialActiveIndex = (index + testimonialSlides.length) % testimonialSlides.length;
+
+      testimonialSlides.forEach(function (slide, i) {
+        var isActive = i === testimonialActiveIndex;
+        slide.classList.toggle("is-active", isActive);
+        slide.setAttribute("aria-hidden", String(!isActive));
+      });
+    }
+
+    function startTestimonialAutoplay() {
+      if (
+        prefersReducedMotion ||
+        testimonialSlides.length < 2 ||
+        (testimonialModal && !testimonialModal.hidden)
+      ) {
+        return;
+      }
+      stopTestimonialAutoplay();
+      testimonialTimerId = window.setInterval(function () {
+        showTestimonial(testimonialActiveIndex + 1);
+      }, TESTIMONIAL_INTERVAL);
+    }
+
+    function stopTestimonialAutoplay() {
+      if (testimonialTimerId !== null) {
+        window.clearInterval(testimonialTimerId);
+        testimonialTimerId = null;
+      }
+    }
+
+    if (testimonialPrev) {
+      testimonialPrev.addEventListener("click", function () {
+        showTestimonial(testimonialActiveIndex - 1);
+        startTestimonialAutoplay();
+      });
+    }
+
+    if (testimonialNext) {
+      testimonialNext.addEventListener("click", function () {
+        showTestimonial(testimonialActiveIndex + 1);
+        startTestimonialAutoplay();
+      });
+    }
+
+    testimonialSlider.addEventListener("mouseenter", stopTestimonialAutoplay);
+    testimonialSlider.addEventListener("mouseleave", startTestimonialAutoplay);
+    testimonialSlider.addEventListener("focusin", stopTestimonialAutoplay);
+    testimonialSlider.addEventListener("focusout", function (event) {
+      if (!testimonialSlider.contains(event.relatedTarget)) {
+        startTestimonialAutoplay();
+      }
+    });
+
+    pauseTestimonialAutoplay = stopTestimonialAutoplay;
+    resumeTestimonialAutoplay = startTestimonialAutoplay;
+
+    showTestimonial(0);
+    startTestimonialAutoplay();
+  }
+
+  function openTestimonialModal(slide, trigger) {
+    if (!testimonialModal || !slide) return;
+
+    var fullCopy = slide.querySelector(".testimonial-slide__full");
+    var title = slide.getAttribute("data-modal-title") || "";
+    var author = slide.getAttribute("data-modal-author") || "";
+    var imageSrc = slide.getAttribute("data-modal-image") || "";
+    var imageAlt = slide.getAttribute("data-modal-image-alt") || "";
+
+    if (testimonialModalTitle) {
+      testimonialModalTitle.textContent = title;
+    }
+
+    if (testimonialModalBody) {
+      testimonialModalBody.innerHTML = fullCopy ? fullCopy.innerHTML : "";
+    }
+
+    if (testimonialModalAuthor) {
+      testimonialModalAuthor.textContent = author;
+    }
+
+    if (testimonialModalImage) {
+      testimonialModalImage.src = imageSrc;
+      testimonialModalImage.alt = imageAlt;
+    }
+
+    testimonialLastFocus = trigger || document.activeElement;
+    testimonialModal.hidden = false;
+    document.body.classList.add("testimonial-modal-open");
+    pauseTestimonialAutoplay();
+
+    var closeButton = testimonialModal.querySelector(".testimonial-modal__close");
+    if (closeButton) {
+      closeButton.focus();
+    }
+  }
+
+  function closeTestimonialModal() {
+    if (!testimonialModal) return;
+
+    testimonialModal.hidden = true;
+    document.body.classList.remove("testimonial-modal-open");
+
+    if (testimonialModalImage) {
+      testimonialModalImage.removeAttribute("src");
+    }
+
+    if (testimonialLastFocus && typeof testimonialLastFocus.focus === "function") {
+      testimonialLastFocus.focus();
+    }
+
+    resumeTestimonialAutoplay();
+  }
+
+  document.querySelectorAll("[data-testimonial-open]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      var slide = button.closest("[data-testimonial-slide]");
+      openTestimonialModal(slide, button);
+    });
+  });
+
+  if (testimonialModal) {
+    testimonialModal.querySelectorAll("[data-testimonial-close]").forEach(function (control) {
+      control.addEventListener("click", closeTestimonialModal);
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (testimonialModal.hidden) return;
+
+      if (event.key === "Escape") {
+        closeTestimonialModal();
+      }
+    });
+  }
+
+  /* -----------------------------------------------------------------------
      Brides gallery lightbox
      -------------------------------------------------------------------- */
 

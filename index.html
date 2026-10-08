@@ -468,42 +468,216 @@
             </div>
           </section>
 
-          <!-- ================= Testimonial ================= -->
+          <!-- ================= Testimonial slider ================= -->
           <section
             class="testimonial"
             id="reviews"
-            aria-labelledby="testimonial-quote"
+            data-testimonial-slider
+            aria-roledescription="carousel"
+            aria-label="Bride testimonials"
           >
-            <div class="testimonial__media" aria-hidden="true">
-              <img
-                class="testimonial__image"
-                src="assets/img/image20.png"
-                alt=""
-                width="1920"
-                height="900"
-                loading="lazy"
-              />
-            </div>
-            <div class="testimonial__overlay" aria-hidden="true"></div>
+            <div class="testimonial-slider__viewport">
+              <article
+                class="testimonial-slide is-active"
+                data-testimonial-slide
+                aria-hidden="false"
+                data-modal-title="We could not recommend Aisle &amp; Beyond more highly."
+                data-modal-author="Bride Sharon"
+                data-modal-image="assets/img/image22.png"
+                data-modal-image-alt="Bride Sharon smiling beside a wedding gown in a bright bridal suite"
+              >
+                <img
+                  class="testimonial-slide__image"
+                  src="assets/img/image20.png"
+                  alt=""
+                  width="1920"
+                  height="900"
+                  loading="lazy"
+                />
+                <div class="testimonial-slide__overlay" aria-hidden="true"></div>
+                <div class="testimonial-slide__inner">
+                  <p class="testimonial__mark" aria-hidden="true">&ldquo;</p>
+                  <blockquote class="testimonial__quote">
+                    <p class="testimonial__text">
+                      <span class="testimonial__line"
+                        >Aisle and Beyond gave me a voice when I had</span
+                      >
+                      <span class="testimonial__line"
+                        >moments of just go with whatever&mdash;she focused on</span
+                      >
+                      <span class="testimonial__line"
+                        >my vision and made sure that I got it.</span
+                      >
+                    </p>
+                  </blockquote>
+                  <button
+                    type="button"
+                    class="testimonial-slide__more"
+                    data-testimonial-open
+                  >
+                    Read full testimonial
+                    <span aria-hidden="true">&rarr;</span>
+                  </button>
+                </div>
+                <div class="testimonial-slide__full" hidden>
+                  <p>
+                    Every lady&rsquo;s wedding is a special season in her life&mdash;one
+                    filled with hopes and expectations. It&rsquo;s a season where loved
+                    ones gather to support in any way they can, but they are
+                    sometimes held with other priorities. It&rsquo;s also one of the
+                    busiest and most overwhelming seasons.
+                  </p>
+                  <p>
+                    What made my experience better was working with Aisle &amp;
+                    Beyond. She attended every dress fitting appointment with me,
+                    whether it was last minute or with ample notice. Aisle &amp;
+                    Beyond gave me a voice when I had moments of just go with
+                    whatever; she focused on my vision and made sure that I got
+                    it. I got an all-in-one package&mdash;concierge services and a
+                    bridal assistant.
+                  </p>
+                  <p>
+                    I can&rsquo;t speak of my special day without mentioning Aisle
+                    &amp; Beyond. Thank you so much for the care, comfort, and
+                    making my wedding one of the best seasons of my life. I have
+                    recommended Aisle &amp; Beyond to my single friends.
+                  </p>
+                </div>
+              </article>
 
-            <div class="testimonial__inner" data-reveal>
-              <p class="testimonial__mark" aria-hidden="true">&ldquo;</p>
-              <blockquote class="testimonial__quote">
-                <p class="testimonial__text" id="testimonial-quote">
-                  <span class="testimonial__line">Pearl and her team were</span>
-                  <span class="testimonial__line"
-                    >incredible, going above and</span
+              <article
+                class="testimonial-slide"
+                data-testimonial-slide
+                aria-hidden="true"
+                data-modal-title="They went above and beyond to make my day truly special."
+                data-modal-author="Aisle &amp; Beyond Bride"
+                data-modal-image="assets/img/image18.png"
+                data-modal-image-alt="Bride in a lace gown with her bouquet in soft window light"
+              >
+                <img
+                  class="testimonial-slide__image"
+                  src="assets/img/hero1.png"
+                  alt=""
+                  width="1920"
+                  height="1080"
+                  loading="lazy"
+                />
+                <div class="testimonial-slide__overlay" aria-hidden="true"></div>
+                <div class="testimonial-slide__inner">
+                  <p class="testimonial__mark" aria-hidden="true">&ldquo;</p>
+                  <blockquote class="testimonial__quote">
+                    <p class="testimonial__text">
+                      <span class="testimonial__line"
+                        >Pearl and her team were incredible, going above</span
+                      >
+                      <span class="testimonial__line"
+                        >and beyond to make my day truly special!</span
+                      >
+                      <span class="testimonial__line"
+                        >We couldn&rsquo;t recommend anyone more highly.</span
+                      >
+                    </p>
+                  </blockquote>
+                  <button
+                    type="button"
+                    class="testimonial-slide__more"
+                    data-testimonial-open
                   >
-                  <span class="testimonial__line"
-                    >beyond to make my day truly</span
+                    Read full testimonial
+                    <span aria-hidden="true">&rarr;</span>
+                  </button>
+                </div>
+                <div class="testimonial-slide__full" hidden>
+                  <p>
+                    From the first conversation, I felt calm and supported. Pearl
+                    anticipated what I would need before I even had to ask&mdash;from
+                    boutique visits to the smallest details on the wedding day.
+                  </p>
+                  <p>
+                    Pearl and her team were incredible, going above and beyond to
+                    make my day truly special. I felt seen, celebrated, and fully
+                    present in every moment that mattered. We couldn&rsquo;t recommend
+                    anyone more highly.
+                  </p>
+                </div>
+              </article>
+
+              <article
+                class="testimonial-slide"
+                data-testimonial-slide
+                aria-hidden="true"
+                data-modal-title="Thoughtful care from the first fitting to the last dance."
+                data-modal-author="Dress Shopping Bride"
+                data-modal-image="assets/img/image12.png"
+                data-modal-image-alt="Bride in a veil and lace gown holding her bouquet"
+              >
+                <img
+                  class="testimonial-slide__image"
+                  src="assets/img/image17.png"
+                  alt=""
+                  width="1920"
+                  height="900"
+                  loading="lazy"
+                />
+                <div class="testimonial-slide__overlay" aria-hidden="true"></div>
+                <div class="testimonial-slide__inner">
+                  <p class="testimonial__mark" aria-hidden="true">&ldquo;</p>
+                  <blockquote class="testimonial__quote">
+                    <p class="testimonial__text">
+                      <span class="testimonial__line"
+                        >Having a bridal concierge changed everything&mdash;I felt</span
+                      >
+                      <span class="testimonial__line"
+                        >calm, confident, and cared for at every step.</span
+                      >
+                    </p>
+                  </blockquote>
+                  <button
+                    type="button"
+                    class="testimonial-slide__more"
+                    data-testimonial-open
                   >
-                  <span class="testimonial__line"
-                    >special! We couldn&rsquo;t recommend</span
-                  >
-                  <span class="testimonial__line">anyone more highly!</span>
-                </p>
-              </blockquote>
+                    Read full testimonial
+                    <span aria-hidden="true">&rarr;</span>
+                  </button>
+                </div>
+                <div class="testimonial-slide__full" hidden>
+                  <p>
+                    Dress shopping felt overwhelming until I had someone in my
+                    corner who understood my style and my timeline. Every
+                    appointment was organized, every detail was handled, and I
+                    always felt like the priority.
+                  </p>
+                  <p>
+                    Having a bridal concierge changed everything&mdash;I felt calm,
+                    confident, and cared for at every step. The experience was
+                    thoughtful from the first fitting through the celebration, and
+                    I would choose Aisle &amp; Beyond again without hesitation.
+                  </p>
+                </div>
+              </article>
             </div>
+
+            <button
+              type="button"
+              class="testimonial-slider__control testimonial-slider__control--prev"
+              data-testimonial-prev
+              aria-label="Previous testimonial"
+            >
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                <path fill="currentColor" d="M14.5 6.5 8 12l6.5 5.5V6.5Z" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              class="testimonial-slider__control testimonial-slider__control--next"
+              data-testimonial-next
+              aria-label="Next testimonial"
+            >
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                <path fill="currentColor" d="M9.5 6.5 16 12l-6.5 5.5V6.5Z" />
+              </svg>
+            </button>
           </section>
 
           <!-- ================= Gallery ================= -->
@@ -903,6 +1077,52 @@
             </div>
           </div>
         </footer>
+      </div>
+    </div>
+
+    <div
+      class="testimonial-modal"
+      id="testimonial-modal"
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="testimonial-modal-title"
+    >
+      <button
+        type="button"
+        class="testimonial-modal__backdrop"
+        data-testimonial-close
+        aria-label="Close testimonial"
+      ></button>
+      <div class="testimonial-modal__panel">
+        <button
+          type="button"
+          class="testimonial-modal__close"
+          data-testimonial-close
+          aria-label="Close testimonial"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <p class="eyebrow testimonial-modal__eyebrow">Full testimonial</p>
+        <div class="testimonial-modal__layout">
+          <div class="testimonial-modal__content">
+            <h2 class="testimonial-modal__title" id="testimonial-modal-title"></h2>
+            <div
+              class="testimonial-modal__body"
+              id="testimonial-modal-body"
+            ></div>
+            <p class="testimonial-modal__author" id="testimonial-modal-author"></p>
+          </div>
+          <figure class="testimonial-modal__media">
+            <img
+              class="testimonial-modal__image"
+              id="testimonial-modal-image"
+              src=""
+              alt=""
+              loading="lazy"
+            />
+          </figure>
+        </div>
       </div>
     </div>
 
