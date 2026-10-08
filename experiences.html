@@ -11,131 +11,167 @@
     <link rel="icon" href="assets/img/logo.png" />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-  <body>
-    <!-- ================= Announcement ================= -->
-    <div class="announcement">
-      <p class="announcement__text">
-        <span class="announcement__mark" aria-hidden="true">&#10022;</span>
-        Thoughtful care for your journey to the aisle and beyond.
-        <span class="announcement__mark" aria-hidden="true">&#10022;</span>
-      </p>
-    </div>
+  <body class="page-experiences">
+    <div class="site-shell">
+      <header class="mobile-bar">
+        <a class="mobile-bar__brand" href="index.html">
+          <img
+            class="mobile-bar__logo"
+            src="assets/img/logo.png"
+            alt="Aisle &amp; Beyond, wedding concierge"
+            width="140"
+            height="56"
+          />
+        </a>
+        <button
+          class="mobile-bar__toggle"
+          id="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="sidebar"
+          aria-label="Open navigation menu"
+        >
+          <span class="mobile-bar__toggle-bar" aria-hidden="true"></span>
+          <span class="mobile-bar__toggle-bar" aria-hidden="true"></span>
+          <span class="mobile-bar__toggle-bar" aria-hidden="true"></span>
+        </button>
+      </header>
 
-    <!-- ================= Header ================= -->
-    <header class="header" id="header">
-      <div class="header__inner container">
-        <nav class="nav" aria-label="Primary">
-          <ul class="nav__list nav__list--start">
-            <li class="nav__item">
-              <a class="nav__link" href="index.html">Home</a>
-            </li>
-            <li class="nav__item">
-              <a class="nav__link" href="experiences.html" aria-current="page"
-                >Experiences</a
-              >
-            </li>
-            <li class="nav__item">
-              <a class="nav__link" href="beyond.html"
-                >The Aisle &amp; Beyond Way</a
-              >
-            </li>
-          </ul>
+      <div class="sidebar-backdrop" id="sidebar-backdrop" hidden></div>
 
-          <a class="nav__brand" href="index.html">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar__inner">
+          <a class="sidebar__brand" href="index.html">
             <img
-              class="nav__logo"
+              class="sidebar__logo"
               src="assets/img/logo.png"
               alt="Aisle &amp; Beyond, wedding concierge"
               width="180"
-              height="72"
+              height="120"
             />
           </a>
 
-          <ul class="nav__list nav__list--end">
-            <li class="nav__item">
-              <a class="nav__link" href="about.html">About</a>
-            </li>
-            <li class="nav__item">
-              <a class="nav__link" href="index.html#how-it-works"
-                >How It Works</a
-              >
-            </li>
-            <li class="nav__item">
-              <a class="nav__link" href="contact.html">Contact</a>
-            </li>
-            <li class="nav__item">
-              <a class="btn btn--primary btn--sm" href="contact.html"
-                >Inquire Now</a
-              >
-            </li>
-          </ul>
+          <nav class="sidebar__nav" aria-label="Primary">
+            <ul class="sidebar__nav-list">
+              <li>
+                <a class="sidebar__nav-link" href="index.html">Home</a>
+              </li>
+              <li>
+                <a
+                  class="sidebar__nav-link"
+                  href="experiences.html"
+                  aria-current="page"
+                  >Experiences</a
+                >
+              </li>
+              <li>
+                <a class="sidebar__nav-link" href="about.html">About</a>
+              </li>
+            </ul>
+          </nav>
 
-          <button
-            class="nav__toggle"
-            id="nav-toggle"
-            type="button"
-            aria-expanded="false"
-            aria-controls="nav-panel"
-            aria-label="Open navigation menu"
+          <a class="btn btn--primary sidebar__cta" href="contact.html"
+            >Inquire Now</a
           >
-            <span class="nav__toggle-bar" aria-hidden="true"></span>
-            <span class="nav__toggle-bar" aria-hidden="true"></span>
-            <span class="nav__toggle-bar" aria-hidden="true"></span>
-          </button>
-        </nav>
-      </div>
 
-      <!-- Collapsible menu (tablet + mobile) -->
-      <div class="nav__panel" id="nav-panel">
-        <ul class="nav__panel-list">
-          <li><a class="nav__panel-link" href="index.html">Home</a></li>
-          <li>
-            <a class="nav__panel-link" href="experiences.html">Experiences</a>
-          </li>
-          <li>
-            <a class="nav__panel-link" href="beyond.html"
-              >The Aisle &amp; Beyond Way</a
-            >
-          </li>
-          <li><a class="nav__panel-link" href="about.html">About</a></li>
-          <li>
-            <a class="nav__panel-link" href="index.html#how-it-works"
-              >How It Works</a
-            >
-          </li>
-          <li><a class="nav__panel-link" href="contact.html">Contact</a></li>
-          <li>
-            <a class="btn btn--primary btn--block" href="contact.html"
-              >Inquire Now</a
-            >
-          </li>
-        </ul>
-      </div>
-    </header>
+          <div class="sidebar__contact">
+            <p>
+              <a class="sidebar__contact-link" href="tel:+16475486920"
+                >+1 647 548 6920</a
+              >
+            </p>
+            <p>
+              <a
+                class="sidebar__contact-link"
+                href="mailto:hello@aisleandbeyond.ca"
+                >hello@aisleandbeyond.ca</a
+              >
+            </p>
+            <p class="sidebar__follow">Follow us:</p>
+            <ul class="sidebar__socials">
+              <li>
+                <a
+                  class="sidebar__social"
+                  href="https://www.instagram.com/aisleandbeyond.ca?igsi=OHdwZ2N5bW81bW1i"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Aisle and Beyond on Instagram"
+                >
+                  <img
+                    src="assets/icon/instagram.png"
+                    alt=""
+                    width="18"
+                    height="18"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  class="sidebar__social"
+                  href="#"
+                  aria-label="Aisle and Beyond on Facebook"
+                >
+                  <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                    <path
+                      fill="currentColor"
+                      d="M13.5 4H16V1h-2.5C10.9 1 9 2.9 9 5.5V8H6v3h3v9h3v-9h2.7l.3-3H12V6c0-.6.4-1 1.5-1Z"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="sidebar__social"
+                  href="#"
+                  aria-label="Aisle and Beyond on TikTok"
+                >
+                  <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                    <path
+                      fill="currentColor"
+                      d="M16.5 3h-2.6v12.2a2.5 2.5 0 1 1-2.5-2.5c.2 0 .5 0 .7.1v-2.6a5.1 5.1 0 1 0 4.4 5V9a6.4 6.4 0 0 0 3.5 1V7.4a3.9 3.9 0 0 1-3.5-4.4Z"
+                    />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </aside>
 
-    <main>
+      <div class="site-main">
+        <main>
       <!-- ================= Page hero ================= -->
-      <section class="page-hero" aria-labelledby="page-hero-title">
+      <section
+        class="page-hero page-hero--centered"
+        aria-labelledby="page-hero-title"
+      >
         <div class="page-hero__media">
           <img
             class="page-hero__image"
-            src="assets/img/image18.png"
-            alt="Blush and ivory rose bridal bouquet tied with a satin ribbon"
+            src="assets/img/image22.png"
+            alt="Bride celebrating with her bridal concierge on the wedding day"
             width="1600"
             height="900"
+            fetchpriority="high"
           />
         </div>
-        <div class="page-hero__overlay" aria-hidden="true"></div>
+        <div
+          class="page-hero__overlay page-hero__overlay--centered"
+          aria-hidden="true"
+        ></div>
 
-        <div class="container">
-          <div class="page-hero__content" data-reveal>
+        <div class="container page-hero__container--centered">
+          <div
+            class="page-hero__content page-hero__content--centered"
+            data-reveal
+          >
             <p class="eyebrow eyebrow--light">Personalized Bridal Concierge</p>
             <h1 class="page-hero__title" id="page-hero-title">
-              Experiences, not packages.
+              Experiences, Thoughtfully<br />
+              Designed Around You.
             </h1>
-            <p class="page-hero__text">
-              We offer thoughtful care for the moments where support can make
-              the biggest difference.
+            <p class="page-hero__text page-hero__text--centered">
+              Personalized bridal care for the moments that matter most.
             </p>
           </div>
         </div>
@@ -298,10 +334,10 @@
           <a class="btn btn--blush" href="contact.html">Begin Your Inquiry</a>
         </div>
       </section>
-    </main>
+        </main>
 
-    <!-- ================= Footer ================= -->
-    <footer class="footer" id="contact">
+        <!-- ================= Footer ================= -->
+        <footer class="footer" id="contact">
       <div class="container">
         <div class="footer__top">
           <div class="footer__brand">
@@ -383,8 +419,8 @@
 
           <address class="footer__contact">
             <p>
-              <a class="footer__link" href="tel:+14169393833"
-                >Canada: +1 416 939 3833</a
+              <a class="footer__link" href="tel:+16475486920"
+                >Canada: +1 647 548 6920</a
               >
             </p>
             <p>
@@ -401,7 +437,9 @@
           </p>
         </div>
       </div>
-    </footer>
+        </footer>
+      </div>
+    </div>
 
     <script src="assets/js/main.js"></script>
   </body>

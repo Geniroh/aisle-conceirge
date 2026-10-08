@@ -11,265 +11,581 @@
     <link rel="icon" href="assets/img/logo.png" />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-  <body>
-    <!-- ================= Announcement ================= -->
-    <div class="announcement">
-      <p class="announcement__text">
-        <span class="announcement__mark" aria-hidden="true">&#10022;</span>
-        Thoughtful care for your journey to the aisle and beyond.
-        <span class="announcement__mark" aria-hidden="true">&#10022;</span>
-      </p>
-    </div>
+  <body class="page-about">
+    <div class="site-shell">
+      <header class="mobile-bar">
+        <a class="mobile-bar__brand" href="index.html">
+          <img
+            class="mobile-bar__logo"
+            src="assets/img/logo.png"
+            alt="Aisle &amp; Beyond, wedding concierge"
+            width="140"
+            height="56"
+          />
+        </a>
+        <button
+          class="mobile-bar__toggle"
+          id="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="sidebar"
+          aria-label="Open navigation menu"
+        >
+          <span class="mobile-bar__toggle-bar" aria-hidden="true"></span>
+          <span class="mobile-bar__toggle-bar" aria-hidden="true"></span>
+          <span class="mobile-bar__toggle-bar" aria-hidden="true"></span>
+        </button>
+      </header>
 
-    <!-- ================= Header ================= -->
-    <header class="header" id="header">
-      <div class="header__inner container">
-        <nav class="nav" aria-label="Primary">
-          <ul class="nav__list nav__list--start">
-            <li class="nav__item">
-              <a class="nav__link" href="index.html">Home</a>
-            </li>
-            <li class="nav__item">
-              <a class="nav__link" href="experiences.html">Experiences</a>
-            </li>
-            <li class="nav__item">
-              <a class="nav__link" href="beyond.html"
-                >The Aisle &amp; Beyond Way</a
-              >
-            </li>
-          </ul>
+      <div class="sidebar-backdrop" id="sidebar-backdrop" hidden></div>
 
-          <a class="nav__brand" href="index.html">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar__inner">
+          <a class="sidebar__brand" href="index.html">
             <img
-              class="nav__logo"
+              class="sidebar__logo"
               src="assets/img/logo.png"
               alt="Aisle &amp; Beyond, wedding concierge"
               width="180"
-              height="72"
+              height="120"
             />
           </a>
 
-          <ul class="nav__list nav__list--end">
-            <li class="nav__item">
-              <a class="nav__link" href="about.html" aria-current="page"
-                >About</a
-              >
-            </li>
-            <li class="nav__item">
-              <a class="nav__link" href="index.html#how-it-works"
-                >How It Works</a
-              >
-            </li>
-            <li class="nav__item">
-              <a class="nav__link" href="contact.html">Contact</a>
-            </li>
-            <li class="nav__item">
-              <a class="btn btn--primary btn--sm" href="contact.html"
-                >Inquire Now</a
-              >
-            </li>
-          </ul>
-
-          <button
-            class="nav__toggle"
-            id="nav-toggle"
-            type="button"
-            aria-expanded="false"
-            aria-controls="nav-panel"
-            aria-label="Open navigation menu"
-          >
-            <span class="nav__toggle-bar" aria-hidden="true"></span>
-            <span class="nav__toggle-bar" aria-hidden="true"></span>
-            <span class="nav__toggle-bar" aria-hidden="true"></span>
-          </button>
-        </nav>
-      </div>
-
-      <!-- Collapsible menu (tablet + mobile) -->
-      <div class="nav__panel" id="nav-panel">
-        <ul class="nav__panel-list">
-          <li><a class="nav__panel-link" href="index.html">Home</a></li>
-          <li>
-            <a class="nav__panel-link" href="experiences.html">Experiences</a>
-          </li>
-          <li>
-            <a class="nav__panel-link" href="beyond.html"
-              >The Aisle &amp; Beyond Way</a
-            >
-          </li>
-          <li><a class="nav__panel-link" href="about.html">About</a></li>
-          <li>
-            <a class="nav__panel-link" href="index.html#how-it-works"
-              >How It Works</a
-            >
-          </li>
-          <li><a class="nav__panel-link" href="contact.html">Contact</a></li>
-          <li>
-            <a class="btn btn--primary btn--block" href="contact.html"
-              >Inquire Now</a
-            >
-          </li>
-        </ul>
-      </div>
-    </header>
-
-    <main>
-      <!-- ================= Page hero ================= -->
-      <section class="page-hero" aria-labelledby="page-hero-title">
-        <div class="page-hero__media">
-          <img
-            class="page-hero__image"
-            src="assets/img/image16.png"
-            alt="Blush and ivory rose bridal bouquet tied with a satin ribbon"
-            width="1600"
-            height="900"
-          />
-        </div>
-        <div class="page-hero__overlay" aria-hidden="true"></div>
-
-        <div class="container">
-          <div class="page-hero__content" data-reveal>
-            <p class="eyebrow eyebrow--light">Our Story</p>
-            <h1 class="page-hero__title" id="page-hero-title">
-              More than a wedding. A woman deserves to feel cared for.
-            </h1>
-            <p class="page-hero__text">
-              Aisle &amp; Beyond exists to create space for brides to experience
-              one of life&rsquo;s most meaningful seasons with confidence, joy,
-              and peace of mind.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================= Founder note ================= -->
-      <section class="founder" aria-labelledby="founder-title">
-        <div class="founder__inner container">
-          <figure class="founder__media" data-reveal>
-            <img
-              class="founder__image"
-              src="assets/img/image2.png"
-              alt="Pearl Charles, founder of Aisle &amp; Beyond, with a bride in a veil and lace gown holding an ivory bouquet"
-              width="900"
-              height="1100"
-            />
-          </figure>
-
-          <div class="founder__content" data-reveal>
-            <p class="eyebrow">A Note From Our Founder</p>
-            <h2 class="founder__title" id="founder-title">
-              Welcome to Aisle &amp; Beyond.
-            </h2>
-
-            <p class="founder__text">
-              Every wedding is made up of countless details, but what lasts is
-              how a bride felt.
-            </p>
-            <p class="founder__text">
-              At Aisle &amp; Beyond, serving others is more than completing a
-              task well. It is both a privilege and a responsibility. Our faith
-              in God shapes how we serve—inspiring us to lead with humility,
-              extend grace, pursue excellence, and care for every bride with
-              genuine compassion.
-            </p>
-            <p class="founder__text">
-              We believe every bride deserves to feel calm, confident,
-              supported, and fully present throughout her bridal journey. It is
-              our privilege to walk alongside her, thoughtfully caring for the
-              details so she can embrace the moments that matter most.
-            </p>
-
-            <p class="script founder__signature">&mdash; Pearl Charles</p>
-            <p class="eyebrow founder__role">
-              Founder &amp; Chief Bridal Concierge
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================= Vision ================= -->
-      <section class="statement" aria-labelledby="vision-title">
-        <div class="container statement__inner" data-reveal>
-          <p class="eyebrow">Our Vision</p>
-          <h2 class="statement__title" id="vision-title">
-            Building Canada&rsquo;s most trusted Bridal Concierge.
-          </h2>
-          <p class="statement__text">
-            We are building more than a bridal concierge company. We are
-            building a brand known for thoughtful hospitality, trusted
-            relationships, and exceptional care—from the moments leading to the
-            aisle to the meaningful experiences beyond it.
-          </p>
-        </div>
-      </section>
-
-      <!-- ================= Every bride deserves ================= -->
-      <section class="creed" aria-labelledby="creed-title">
-        <div class="container" data-reveal>
-          <h2 class="eyebrow" id="creed-title">Every Bride Deserves</h2>
-          <ul class="creed__list">
-            <li class="creed__line">To feel calm.</li>
-            <li class="creed__line">To feel confident.</li>
-            <li class="creed__line">To feel seen.</li>
-            <li class="creed__line">To be fully present.</li>
-          </ul>
-          <p class="creed__note">
-            Everything we do at Aisle &amp; Beyond exists to make that possible.
-          </p>
-        </div>
-      </section>
-
-      <!-- ================= CTA ================= -->
-      <section class="cta" id="inquire" aria-labelledby="cta-title">
-        <div class="container cta__inner" data-reveal>
-          <p class="eyebrow eyebrow--light">The Promise</p>
-          <h2 class="cta__title" id="cta-title">
-            Every bride. Every experience. Every time.
-          </h2>
-          <p class="cta__text">
-            Our promise is measured by the experience we deliver.
-          </p>
-          <a class="btn btn--blush" href="experiences.html"
-            >Experience Aisle &amp; Beyond</a
-          >
-        </div>
-      </section>
-    </main>
-
-    <!-- ================= Footer ================= -->
-    <footer class="footer" id="contact">
-      <div class="container">
-        <div class="footer__top">
-          <div class="footer__brand">
-            <img
-              class="footer__logo"
-              src="assets/img/logo-footer.png"
-              alt="Aisle &amp; Beyond, wedding concierge"
-              width="180"
-              height="46"
-              loading="lazy"
-            />
-            <p class="footer__tagline">Follow us for inspiration</p>
-            <ul class="footer__socials">
+          <nav class="sidebar__nav" aria-label="Primary">
+            <ul class="sidebar__nav-list">
+              <li>
+                <a class="sidebar__nav-link" href="index.html">Home</a>
+              </li>
+              <li>
+                <a class="sidebar__nav-link" href="experiences.html"
+                  >Experiences</a
+                >
+              </li>
               <li>
                 <a
-                  class="footer__social"
+                  class="sidebar__nav-link"
+                  href="about.html"
+                  aria-current="page"
+                  >About</a
+                >
+              </li>
+            </ul>
+          </nav>
+
+          <a class="btn btn--primary sidebar__cta" href="contact.html"
+            >Inquire Now</a
+          >
+
+          <div class="sidebar__contact">
+            <p>
+              <a class="sidebar__contact-link" href="tel:+16475486920"
+                >+1 647 548 6920</a
+              >
+            </p>
+            <p>
+              <a
+                class="sidebar__contact-link"
+                href="mailto:hello@aisleandbeyond.ca"
+                >hello@aisleandbeyond.ca</a
+              >
+            </p>
+            <p class="sidebar__follow">Follow us:</p>
+            <ul class="sidebar__socials">
+              <li>
+                <a
+                  class="sidebar__social"
                   href="https://www.instagram.com/aisleandbeyond.ca?igsi=OHdwZ2N5bW81bW1i"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Aisle and Beyond on Instagram"
                 >
                   <img
-                    class="footer__social-icon"
                     src="assets/icon/instagram.png"
                     alt=""
-                    width="16"
-                    height="16"
-                    loading="lazy"
+                    width="18"
+                    height="18"
                   />
                 </a>
               </li>
-              <!-- <li>
+              <li>
+                <a
+                  class="sidebar__social"
+                  href="#"
+                  aria-label="Aisle and Beyond on Facebook"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="18"
+                    height="18"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M13.5 4H16V1h-2.5C10.9 1 9 2.9 9 5.5V8H6v3h3v9h3v-9h2.7l.3-3H12V6c0-.6.4-1 1.5-1Z"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="sidebar__social"
+                  href="#"
+                  aria-label="Aisle and Beyond on TikTok"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="18"
+                    height="18"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M16.5 3h-2.6v12.2a2.5 2.5 0 1 1-2.5-2.5c.2 0 .5 0 .7.1v-2.6a5.1 5.1 0 1 0 4.4 5V9a6.4 6.4 0 0 0 3.5 1V7.4a3.9 3.9 0 0 1-3.5-4.4Z"
+                    />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+
+      <div class="site-main">
+        <main>
+          <!-- ================= Page hero ================= -->
+          <section
+            class="page-hero page-hero--centered"
+            aria-labelledby="page-hero-title"
+          >
+            <div class="page-hero__media">
+              <img
+                class="page-hero__image"
+                src="assets/img/image23.png"
+                alt="Bride in a lace gown with her train adjusted in a garden setting"
+                width="1600"
+                height="900"
+                fetchpriority="high"
+              />
+            </div>
+            <div
+              class="page-hero__overlay page-hero__overlay--centered"
+              aria-hidden="true"
+            ></div>
+
+            <div class="container page-hero__container--centered">
+              <div
+                class="page-hero__content page-hero__content--centered"
+                data-reveal
+              >
+                <p class="eyebrow eyebrow--light">Our Story</p>
+                <h1 class="page-hero__title" id="page-hero-title">
+                  A More Thoughtful Way to Experience<br />
+                  Your Bridal Journey.
+                </h1>
+                <p class="page-hero__text page-hero__text--centered">
+                  Aisle &amp; Beyond was created to provide exceptional care
+                  throughout the bridal journey&mdash;anticipating the details
+                  so every bride can feel confident, cared for, and fully
+                  present
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- ================= Founder note ================= -->
+          <section class="founder" aria-labelledby="founder-title">
+            <div class="founder__inner container">
+              <figure class="founder__media" data-reveal>
+                <img
+                  class="founder__image"
+                  src="assets/img/founder.png"
+                  alt="Pearl Charles, founder of Aisle &amp; Beyond, with a bride in a veil and lace gown holding an ivory bouquet"
+                  width="900"
+                  height="1100"
+                />
+              </figure>
+
+              <div class="founder__content" data-reveal>
+                <p class="eyebrow">A Note From Our Founder</p>
+                <h2 class="founder__title" id="founder-title">
+                  Welcome to Aisle &amp; Beyond.
+                </h2>
+
+                <p class="founder__text">
+                  Every wedding is made up of countless details, but what lasts
+                  is how a bride felt.
+                </p>
+                <p class="founder__text">
+                  At Aisle &amp; Beyond, serving others is more than completing
+                  a task well. It is both a privilege and a responsibility. Our
+                  faith in God shapes how we serve—inspiring us to lead with
+                  humility, extend grace, pursue excellence, and care for every
+                  bride with genuine compassion.
+                </p>
+                <p class="founder__text">
+                  We believe every bride deserves to feel calm, confident,
+                  supported, and fully present throughout her bridal journey. It
+                  is our privilege to walk alongside her, thoughtfully caring
+                  for the details so she can embrace the moments that matter
+                  most.
+                </p>
+
+                <p class="script founder__signature">&mdash; Pearl Charles</p>
+                <p class="eyebrow founder__role">
+                  Founder &amp; Chief Bridal Concierge
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- ================= The Aisle & Beyond Way ================= -->
+          <div class="way-block">
+            <section class="way way--reverse" aria-labelledby="about-way-title">
+              <div class="way__inner container">
+                <div class="way__content" data-reveal>
+                  <p class="eyebrow">The Aisle &amp; Beyond Way</p>
+                  <h2 class="section__title" id="about-way-title">
+                    More than planning.
+                  </h2>
+                  <p class="way__script script">We curate, care, and calm.</p>
+                  <p class="way__text">
+                    At Aisle &amp; Beyond, how we serve is just as important as
+                    what we do. Our philosophy is rooted in Heart, Hospitality,
+                    and Humanity&mdash;so every bride feels calm, confident,
+                    seen, celebrated, supported, and fully present.
+                  </p>
+                  <a class="btn btn--primary" href="beyond.html"
+                    >Discover Our Way</a
+                  >
+                </div>
+
+                <figure class="way__media" data-reveal>
+                  <img
+                    class="way__image"
+                    src="assets/img/image2.png"
+                    alt="Bride in an open-back lace gown standing among wedding dresses in a bridal boutique"
+                    width="900"
+                    height="1100"
+                    loading="lazy"
+                  />
+                </figure>
+              </div>
+            </section>
+
+            <section
+              class="values values--vectors"
+              aria-label="How Aisle and Beyond serves brides"
+            >
+              <div class="container">
+                <ul class="values__list">
+                  <li class="values__item" data-reveal>
+                    <img
+                      class="values__icon"
+                      src="assets/icon/vector1.png"
+                      alt=""
+                      width="118"
+                      height="95"
+                      loading="lazy"
+                      aria-hidden="true"
+                    />
+                    <h3 class="values__title">Bride-Focused</h3>
+                    <p class="values__text">
+                      Your needs. Your comfort. Your experience.
+                    </p>
+                  </li>
+                  <li class="values__item" data-reveal>
+                    <img
+                      class="values__icon"
+                      src="assets/icon/vector2.png"
+                      alt=""
+                      width="118"
+                      height="95"
+                      loading="lazy"
+                      aria-hidden="true"
+                    />
+                    <h3 class="values__title">Detail-Driven</h3>
+                    <p class="values__text">
+                      We anticipate, plan, and care for every detail.
+                    </p>
+                  </li>
+                  <li class="values__item" data-reveal>
+                    <img
+                      class="values__icon"
+                      src="assets/icon/vector3.png"
+                      alt=""
+                      width="118"
+                      height="95"
+                      loading="lazy"
+                      aria-hidden="true"
+                    />
+                    <h3 class="values__title">Trusted Care</h3>
+                    <p class="values__text">
+                      Confidential, reliable, and always in your corner.
+                    </p>
+                  </li>
+                  <li class="values__item" data-reveal>
+                    <img
+                      class="values__icon"
+                      src="assets/icon/vector4.png"
+                      alt=""
+                      width="118"
+                      height="95"
+                      loading="lazy"
+                      aria-hidden="true"
+                    />
+                    <h3 class="values__title">Elevated Experience</h3>
+                    <p class="values__text">
+                      Exceptional service from start to beyond.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </section>
+          </div>
+
+          <!-- ================= Our Foundation ================= -->
+          <section class="foundation" aria-labelledby="about-foundation-title">
+            <div class="container">
+              <header class="section__head" data-reveal>
+                <p class="eyebrow">Our Foundation</p>
+                <h2 class="section__title" id="about-foundation-title">
+                  We see the bride before we see the event.
+                </h2>
+                <p class="section__lead">
+                  Our purpose is not simply to help create a beautiful wedding.
+                  It is to create an experience in which the bride feels
+                  beautifully cared for.
+                </p>
+              </header>
+
+              <ul class="foundation__grid">
+                <li class="pillar" data-reveal>
+                  <img
+                    class="pillar__icon"
+                    src="assets/icon/heart.png"
+                    alt=""
+                    width="93"
+                    height="66"
+                    loading="lazy"
+                    aria-hidden="true"
+                  />
+                  <h3 class="pillar__title">Heart</h3>
+                  <p class="pillar__text">
+                    We lead with genuine care. Every bride deserves to feel
+                    seen, valued, supported, and celebrated.
+                  </p>
+                </li>
+                <li class="pillar" data-reveal>
+                  <img
+                    class="pillar__icon"
+                    src="assets/icon/hospitality.png"
+                    alt=""
+                    width="67"
+                    height="68"
+                    loading="lazy"
+                    aria-hidden="true"
+                  />
+                  <h3 class="pillar__title">Hospitality</h3>
+                  <p class="pillar__text">
+                    We create peace through thoughtful anticipation, quiet
+                    excellence, and attention to the smallest details.
+                  </p>
+                </li>
+                <li class="pillar" data-reveal>
+                  <img
+                    class="pillar__icon"
+                    src="assets/icon/humanity.png"
+                    alt=""
+                    width="106"
+                    height="70"
+                    loading="lazy"
+                    aria-hidden="true"
+                  />
+                  <h3 class="pillar__title">Humanity</h3>
+                  <p class="pillar__text">
+                    We honour the person behind the celebration with dignity,
+                    compassion, respect, and grace.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- ================= The Aisle & Beyond Method ================= -->
+          <section class="method method--carousel" aria-labelledby="about-method-title">
+            <div class="container">
+              <header class="section__head" data-reveal>
+                <p class="eyebrow">The Aisle &amp; Beyond Method&trade;</p>
+                <h2 class="section__title" id="about-method-title">
+                  Every experience is designed with intention and delivered with
+                  care.
+                </h2>
+                <p class="section__lead">
+                  Our signature approach creates a consistent standard of
+                  thoughtful care from the first conversation to the moments
+                  beyond the celebration.
+                </p>
+              </header>
+
+              <div class="method-carousel" data-method-carousel>
+                <button
+                  type="button"
+                  class="method-carousel__control method-carousel__control--prev"
+                  data-method-carousel-prev
+                  aria-label="Show previous step"
+                >
+                  <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                    <path
+                      fill="currentColor"
+                      d="M14.5 6.5 8 12l6.5 5.5V6.5Z"
+                    />
+                  </svg>
+                </button>
+                <div class="method-carousel__viewport">
+                  <ol class="method-carousel__track">
+                    <li class="step method-carousel__slide">
+                      <p class="step__number">01</p>
+                      <h3 class="step__title">Discover</h3>
+                      <p class="step__text">
+                        We listen first, understanding the bride, her vision,
+                        and what matters most.
+                      </p>
+                    </li>
+                    <li class="step method-carousel__slide">
+                      <p class="step__number">02</p>
+                      <h3 class="step__title">Curate</h3>
+                      <p class="step__text">
+                        We thoughtfully recommend experiences and trusted
+                        partners that fit her journey.
+                      </p>
+                    </li>
+                    <li class="step method-carousel__slide">
+                      <p class="step__number">03</p>
+                      <h3 class="step__title">Prepare</h3>
+                      <p class="step__text">
+                        We plan every detail with intention, creating confidence
+                        and peace of mind.
+                      </p>
+                    </li>
+                    <li class="step method-carousel__slide">
+                      <p class="step__number">04</p>
+                      <h3 class="step__title">Support</h3>
+                      <p class="step__text">
+                        We provide calm, attentive concierge care so the bride
+                        can be fully present.
+                      </p>
+                    </li>
+                    <li class="step method-carousel__slide">
+                      <p class="step__number">05</p>
+                      <h3 class="step__title">Preserve</h3>
+                      <p class="step__text">
+                        We continue caring beyond the celebration, building
+                        relationships that last.
+                      </p>
+                    </li>
+                  </ol>
+                </div>
+                <button
+                  type="button"
+                  class="method-carousel__control method-carousel__control--next"
+                  data-method-carousel-next
+                  aria-label="Show next step"
+                >
+                  <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                    <path
+                      fill="currentColor"
+                      d="M9.5 6.5 16 12l-6.5 5.5V6.5Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- ================= Vision ================= -->
+          <section class="statement" aria-labelledby="vision-title">
+            <div class="container statement__inner" data-reveal>
+              <p class="eyebrow">Our Vision</p>
+              <h2 class="statement__title" id="vision-title">
+                Building Canada&rsquo;s most trusted Bridal Concierge.
+              </h2>
+              <p class="statement__text">
+                We are building more than a bridal concierge company. We are
+                building a brand known for thoughtful hospitality, trusted
+                relationships, and exceptional care—from the moments leading to
+                the aisle to the meaningful experiences beyond it.
+              </p>
+            </div>
+          </section>
+
+          <!-- ================= Every bride deserves ================= -->
+          <section class="creed" aria-labelledby="creed-title">
+            <div class="container" data-reveal>
+              <h2 class="eyebrow" id="creed-title">Every Bride Deserves</h2>
+              <ul class="creed__list">
+                <li class="creed__line">To feel calm.</li>
+                <li class="creed__line">To feel confident.</li>
+                <li class="creed__line">To feel seen.</li>
+                <li class="creed__line">To be fully present.</li>
+              </ul>
+              <p class="creed__note">
+                Everything we do at Aisle &amp; Beyond exists to make that
+                possible.
+              </p>
+            </div>
+          </section>
+
+          <!-- ================= CTA ================= -->
+          <section class="cta" id="inquire" aria-labelledby="cta-title">
+            <div class="container cta__inner" data-reveal>
+              <p class="eyebrow eyebrow--light">The Promise</p>
+              <h2 class="cta__title" id="cta-title">
+                Every bride. Every experience. Every time.
+              </h2>
+              <p class="cta__text">
+                Our promise is measured by the experience we deliver.
+              </p>
+              <a class="btn btn--blush" href="experiences.html"
+                >Experience Aisle &amp; Beyond</a
+              >
+            </div>
+          </section>
+        </main>
+
+        <!-- ================= Footer ================= -->
+        <footer class="footer" id="contact">
+          <div class="container">
+            <div class="footer__top">
+              <div class="footer__brand">
+                <img
+                  class="footer__logo"
+                  src="assets/img/logo-footer.png"
+                  alt="Aisle &amp; Beyond, wedding concierge"
+                  width="180"
+                  height="46"
+                  loading="lazy"
+                />
+                <p class="footer__tagline">Follow us for inspiration</p>
+                <ul class="footer__socials">
+                  <li>
+                    <a
+                      class="footer__social"
+                      href="https://www.instagram.com/aisleandbeyond.ca?igsi=OHdwZ2N5bW81bW1i"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Aisle and Beyond on Instagram"
+                    >
+                      <img
+                        class="footer__social-icon"
+                        src="assets/icon/instagram.png"
+                        alt=""
+                        width="16"
+                        height="16"
+                        loading="lazy"
+                      />
+                    </a>
+                  </li>
+                  <!-- <li>
                 <a
                   class="footer__social"
                   href="#"
@@ -289,55 +605,61 @@
                   </svg>
                 </a>
               </li> -->
-            </ul>
+                </ul>
+              </div>
+
+              <nav class="footer__nav" aria-label="Footer">
+                <ul class="footer__links">
+                  <li><a class="footer__link" href="index.html">Home</a></li>
+                  <li>
+                    <a class="footer__link" href="about.html">About Us</a>
+                  </li>
+                  <li>
+                    <a class="footer__link" href="index.html#how-it-works"
+                      >How it Works</a
+                    >
+                  </li>
+                </ul>
+                <ul class="footer__links">
+                  <li>
+                    <a class="footer__link" href="experiences.html"
+                      >Experiences</a
+                    >
+                  </li>
+                  <li>
+                    <a class="footer__link" href="beyond.html"
+                      >The Aisle &amp; Beyond Way</a
+                    >
+                  </li>
+                  <li>
+                    <a class="footer__link" href="contact.html">Contact Us</a>
+                  </li>
+                </ul>
+              </nav>
+
+              <address class="footer__contact">
+                <p>
+                  <a class="footer__link" href="tel:+16475486920"
+                    >Canada: +1 647 548 6920</a
+                  >
+                </p>
+                <p>
+                  <a class="footer__link" href="mailto:hello@aisleandbeyond.ca"
+                    >hello@aisleandbeyond.ca</a
+                  >
+                </p>
+              </address>
+            </div>
+
+            <div class="footer__bottom">
+              <p class="footer__copyright">
+                &copy; 2026 Aisle &amp; Beyond. All rights reserved.
+              </p>
+            </div>
           </div>
-
-          <nav class="footer__nav" aria-label="Footer">
-            <ul class="footer__links">
-              <li><a class="footer__link" href="index.html">Home</a></li>
-              <li><a class="footer__link" href="about.html">About Us</a></li>
-              <li>
-                <a class="footer__link" href="index.html#how-it-works"
-                  >How it Works</a
-                >
-              </li>
-            </ul>
-            <ul class="footer__links">
-              <li>
-                <a class="footer__link" href="experiences.html">Experiences</a>
-              </li>
-              <li>
-                <a class="footer__link" href="beyond.html"
-                  >The Aisle &amp; Beyond Way</a
-                >
-              </li>
-              <li>
-                <a class="footer__link" href="contact.html">Contact Us</a>
-              </li>
-            </ul>
-          </nav>
-
-          <address class="footer__contact">
-            <p>
-              <a class="footer__link" href="tel:+14169393833"
-                >Canada: +1 416 939 3833</a
-              >
-            </p>
-            <p>
-              <a class="footer__link" href="mailto:hello@aisleandbeyond.ca"
-                >hello@aisleandbeyond.ca</a
-              >
-            </p>
-          </address>
-        </div>
-
-        <div class="footer__bottom">
-          <p class="footer__copyright">
-            &copy; 2026 Aisle &amp; Beyond. All rights reserved.
-          </p>
-        </div>
+        </footer>
       </div>
-    </footer>
+    </div>
 
     <script src="assets/js/main.js"></script>
   </body>
