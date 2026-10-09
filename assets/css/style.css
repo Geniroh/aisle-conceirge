@@ -574,6 +574,44 @@ body.nav-open {
   object-fit: contain;
 }
 
+/* ---- Desktop: persistent sidebar ---- */
+
+@media (min-width: 769px) {
+  .site-shell {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .mobile-bar {
+    display: none;
+  }
+
+  .sidebar-backdrop {
+    display: none !important;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 0;
+    flex: 0 0 var(--sidebar-width);
+    width: var(--sidebar-width);
+    max-width: none;
+    height: 100dvh;
+    transform: none;
+    box-shadow: none;
+    z-index: 100;
+  }
+
+  .site-main {
+    flex: 1;
+    min-width: 0;
+  }
+
+  body.nav-open {
+    overflow: auto;
+  }
+}
+
 /* =========================================================================
    7. Hero
    ========================================================================= */
@@ -1742,15 +1780,47 @@ body.testimonial-modal-open {
 }
 
 .promise__quote {
+  position: relative;
   margin-top: var(--space-xl);
-  padding-left: var(--space-lg);
-  border-left: 2px solid var(--color-gold-blush);
+  max-width: 38rem;
+  padding-block: 0.15em;
+  padding-left: clamp(1.25rem, 2.6vw, 1.5rem);
+  padding-right: clamp(1.75rem, 3.4vw, 2.25rem);
+  border: 0;
   font-family: var(--font-heading);
   font-size: var(--fs-h3);
-  /* font-style: italic; */
   font-weight: 400;
-  line-height: 1.55;
+  line-height: 1.45;
   color: var(--color-navy-bold);
+}
+
+.promise__quote p {
+  margin: 0;
+}
+
+/* Gentle bracket rails — mostly vertical, soft curve at the caps (not full arcs) */
+.promise__quote::before,
+.promise__quote::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 0.55rem;
+  border-color: var(--color-gold-blush);
+  border-style: solid;
+  pointer-events: none;
+}
+
+.promise__quote::before {
+  left: 0;
+  border-width: 1.5px 0 1.5px 1.5px;
+  border-radius: 7px 0 0 7px;
+}
+
+.promise__quote::after {
+  right: 0;
+  border-width: 1.5px 1.5px 1.5px 0;
+  border-radius: 0 7px 7px 0;
 }
 
 .promise__text {
@@ -3186,7 +3256,21 @@ body.lightbox-open {
 
   .promise__quote {
     padding-left: var(--space-md);
+    padding-right: calc(var(--space-md) + 0.35rem);
     font-size: var(--fs-md);
+  }
+
+  .promise__quote::before,
+  .promise__quote::after {
+    width: 0.45rem;
+  }
+
+  .promise__quote::before {
+    border-radius: 5px 0 0 5px;
+  }
+
+  .promise__quote::after {
+    border-radius: 0 5px 5px 0;
   }
 
   .footer__top {

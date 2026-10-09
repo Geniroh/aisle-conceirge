@@ -9,15 +9,24 @@
   var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* -----------------------------------------------------------------------
-     Sidebar navigation (opens on click, all viewports)
+     Sidebar navigation (drawer on mobile, always visible on desktop)
      -------------------------------------------------------------------- */
 
   var toggle = document.getElementById("nav-toggle");
   var sidebar = document.getElementById("sidebar");
   var backdrop = document.getElementById("sidebar-backdrop");
+  var mobileNavQuery = window.matchMedia("(max-width: 768px)");
+
+  function isMobileNav() {
+    return mobileNavQuery.matches;
+  }
 
   function setMenu(isOpen) {
     if (!toggle || !sidebar) return;
+
+    if (!isMobileNav()) {
+      isOpen = false;
+    }
 
     toggle.setAttribute("aria-expanded", String(isOpen));
     toggle.setAttribute(
@@ -34,7 +43,13 @@
   }
 
   if (toggle && sidebar) {
+    mobileNavQuery.addEventListener("change", function () {
+      setMenu(false);
+    });
+    setMenu(false);
+
     toggle.addEventListener("click", function () {
+      if (!isMobileNav()) return;
       var isOpen = toggle.getAttribute("aria-expanded") === "true";
       setMenu(!isOpen);
     });
