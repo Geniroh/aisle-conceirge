@@ -72,11 +72,11 @@
           >
 
           <div class="sidebar__contact">
-            <p>
+            <!-- <p>
               <a class="sidebar__contact-link" href="tel:+16475486920"
                 >+1 647 548 6920</a
               >
-            </p>
+            </p> -->
             <p>
               <a
                 class="sidebar__contact-link"
@@ -291,7 +291,28 @@
                       <option value="Quebec">Quebec</option>
                       <option value="Saskatchewan">Saskatchewan</option>
                       <option value="Yukon">Yukon</option>
+                      <option value="Other">Other</option>
                     </select>
+                    <div class="form__other" id="wedding-location-other-wrap" hidden>
+                      <label class="form__label" for="wedding-location-other">
+                        Your location
+                      </label>
+                      <input
+                        class="form__input"
+                        type="text"
+                        id="wedding-location-other"
+                        name="wedding_location_other"
+                        placeholder="City, region, or country"
+                        autocomplete="off"
+                        disabled
+                        aria-describedby="wedding-location-other-error"
+                      />
+                      <span
+                        class="form__error"
+                        id="wedding-location-other-error"
+                        hidden
+                      ></span>
+                    </div>
                   </div>
 
                   <div class="form__field">
@@ -452,11 +473,11 @@
               </nav>
 
               <address class="footer__contact">
-                <p>
+                <!-- <p>
                   <a class="footer__link" href="tel:+16475486920"
                     >Canada: +1 647 548 6920</a
                   >
-                </p>
+                </p> -->
                 <p>
                   <a class="footer__link" href="mailto:hello@aisleandbeyond.ca"
                     >hello@aisleandbeyond.ca</a
@@ -475,6 +496,7 @@
       </div>
     </div>
 
+    <script src="assets/js/phone-countries.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>
