@@ -1,0 +1,4 @@
+# Never serve secrets or templates directly.
+<FilesMatch "^(config(\.example)?|templates)\.php$">
+  Require all denied
+</FilesMatch>

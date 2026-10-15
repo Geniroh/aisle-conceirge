@@ -428,6 +428,7 @@
       option.value = country.iso;
       option.textContent = country.iso;
       option.setAttribute("data-name", country.name);
+      option.setAttribute("data-dial", country.dial);
 
       if (country.iso === preferred) option.selected = true;
 
@@ -501,7 +502,9 @@
 
       var name = option.getAttribute("data-name") || option.value;
 
-      isoLabel.textContent = option.value;
+      var dial = option.getAttribute("data-dial");
+
+      isoLabel.textContent = dial ? option.value + " " + dial : option.value;
       button.setAttribute("aria-label", "Country code, " + name);
     }
 
@@ -546,7 +549,8 @@
 
       Array.prototype.forEach.call(phoneCode.options, function (option) {
         var name = option.getAttribute("data-name") || option.textContent;
-        var haystack = (name + " " + option.value).toLowerCase();
+        var dial = option.getAttribute("data-dial") || "";
+        var haystack = (name + " " + option.value + " " + dial).toLowerCase();
 
         if (q && haystack.indexOf(q) === -1) return;
 
@@ -556,8 +560,15 @@
         item.setAttribute("role", "option");
         item.setAttribute("data-value", option.value);
         item.setAttribute("aria-selected", option.selected ? "true" : "false");
-        item.setAttribute("aria-label", name);
-        item.textContent = option.value;
+        item.setAttribute("aria-label", name + " " + dial);
+
+        var isoText = document.createElement("span");
+        isoText.textContent = option.value;
+        var dialText = document.createElement("span");
+        dialText.className = "phone-code__dial";
+        dialText.textContent = dial;
+        item.appendChild(isoText);
+        item.appendChild(dialText);
 
         if (option.selected) item.classList.add("is-selected");
 
@@ -771,14 +782,70 @@
         return;
       }
 
-      form.hidden = true;
+      var submitButton = document.getElementById("form-submit");
+      var formError = document.getElementById("form-error");
+      var submitLabel = submitButton ? submitButton.textContent : "";
 
-      if (formSuccess) {
-        formSuccess.hidden = false;
-        formSuccess.setAttribute("tabindex", "-1");
-        formSuccess.focus();
+      function fail(message) {
+        if (formError) {
+          formError.textContent = message;
+          formError.hidden = false;
+        }
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = submitLabel;
+        }
       }
+
+      if (formError) formError.hidden = true;
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = "Sending...";
+      }
+
+      var selectedCode = phoneCode && phoneCode.options[phoneCode.selectedIndex];
+      var dialField = document.getElementById("phone-dial");
+      if (dialField) dialField.value = (selectedCode && selectedCode.getAttribute("data-dial")) || "";
+
+      fetch(form.getAttribute("action"), {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      })
+        .then(function (response) {
+          return response.json().then(
+            function (result) {
+              return { ok: response.ok && result.ok, result: result };
+            },
+            function () {
+              return { ok: false, result: {} };
+            }
+          );
+        })
+        .then(function (outcome) {
+          if (!outcome.ok) {
+            fail(
+              (outcome.result && outcome.result.error) ||
+                "Something went wrong. Please try again or email us directly."
+            );
+            return;
+          }
+
+          form.hidden = true;
+
+          if (formSuccess) {
+            formSuccess.hidden = false;
+            formSuccess.setAttribute("tabindex", "-1");
+            formSuccess.focus();
+          }
+        })
+        .catch(function () {
+          fail("We could not send your message. Please check your connection and try again.");
+        });
     });
+
+    var formTimestamp = document.getElementById("form-ts");
+    if (formTimestamp) formTimestamp.value = String(Date.now());
   }
 
   /* -----------------------------------------------------------------------

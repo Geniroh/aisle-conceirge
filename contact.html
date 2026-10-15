@@ -191,9 +191,25 @@
                 <form
                   class="form"
                   id="inquiry-form"
+                  action="api/contact.php"
+                  method="post"
                   novalidate
                   aria-labelledby="form-title"
                 >
+                  <!-- Honeypot: hidden from people, bots fill it in -->
+                  <div class="form__hp" aria-hidden="true">
+                    <label for="company-website">Leave this field empty</label>
+                    <input
+                      type="text"
+                      id="company-website"
+                      name="company_website"
+                      tabindex="-1"
+                      autocomplete="off"
+                    />
+                  </div>
+                  <input type="hidden" name="form_ts" id="form-ts" value="" />
+                  <input type="hidden" name="phone_dial" id="phone-dial" value="" />
+
                   <div class="form__field">
                     <label class="form__label" for="name">
                       Name
@@ -349,8 +365,10 @@
                     ></textarea>
                   </div>
 
+                  <p class="form__error form__error--general" id="form-error" role="alert" hidden></p>
+
                   <div class="form__actions">
-                    <button class="btn btn--primary" type="submit">
+                    <button class="btn btn--primary" type="submit" id="form-submit">
                       Submit Form
                     </button>
                   </div>
